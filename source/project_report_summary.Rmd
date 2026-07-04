@@ -1,0 +1,38 @@
+---
+title: "CFRM 503 Project 1"
+author: "Jackson Wang"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+source("scripts/scarey_transition_optimization.R")
+```
+
+## Overview
+
+This report constructs a four-week transition plan for a portfolio benchmarked to the SCAREY Index.
+
+The current benchmark includes REITs with names beginning with M, N, O, and P. The future benchmark includes REITs with names beginning with P, R, and S. The portfolio is optimized across five decision points from four weeks before reconstitution through the reconstitution point.
+
+## Optimal allocation table
+
+```{r weights-table}
+print(as.data.frame(weights_tbl))
+```
+
+## Expected tracking error and expected excess return
+
+```{r expected-metrics}
+print(as.data.frame(metrics_tbl))
+```
+
+## Realized active return and tracking error
+
+```{r realized-results}
+print(as.data.frame(results_step7))
+```
+
+## Interpretation
+
+The transition optimization produces a consistent path from the current SCAREY benchmark to the future benchmark. Tracking error relative to the current benchmark increases as the portfolio moves toward the future benchmark, while tracking error relative to the future benchmark decreases. The expected excess return constraint remains close to the required 2 basis points per week.
