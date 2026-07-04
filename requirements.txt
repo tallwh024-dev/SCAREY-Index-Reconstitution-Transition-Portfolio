@@ -1,0 +1,10 @@
+R packages used:
+
+readxl
+dplyr
+stringr
+tidyr
+quantmod
+PerformanceAnalytics
+CVXR
+xts
